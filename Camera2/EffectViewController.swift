@@ -16,4 +16,14 @@ class EffectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var effectImage: UIImageView!
+    
+    @IBAction func effectButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func shareButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+    }
 }
