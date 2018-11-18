@@ -65,9 +65,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyN-ga-9H6">
-                                <rect key="frame" x="67" y="125" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyN-ga-9H6">
+                                <rect key="frame" x="16" y="125" width="343" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnh-49-xTl">
                                 <rect key="frame" x="149" y="318" width="77" height="30"/>
@@ -95,6 +94,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uyN-ga-9H6" firstAttribute="top" secondItem="9s2-kW-kby" secondAttribute="top" id="2HK-8X-iYa"/>
+                            <constraint firstItem="uyN-ga-9H6" firstAttribute="leading" secondItem="9s2-kW-kby" secondAttribute="leading" constant="16" id="HYC-M5-gL3"/>
+                            <constraint firstItem="9s2-kW-kby" firstAttribute="trailing" secondItem="uyN-ga-9H6" secondAttribute="trailing" constant="16" id="ywT-4E-B2J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9s2-kW-kby"/>
                     </view>
                 </viewController>
