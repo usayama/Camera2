@@ -22,6 +22,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // カメラが利用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             print("カメラは利用できます")
+            // (1) UIImagePickerControllerのインスタンスを作成
+            let imagePickerController = UIImagePickerController()
+            // (2) sourceType に camera を設定
+            imagePickerController.sourceType = .camera
+            // (3) delegate設置
+            imagePickerController.delegate = self
+            // (4) モーダルビューで表示
+            present(imagePickerController, animated: true, completion: nil)
         } else {
             print("カメラは利用できません")
         }
