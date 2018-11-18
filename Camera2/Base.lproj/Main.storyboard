@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Effect View Controller-->
         <scene sceneID="omW-6k-ArR">
             <objects>
-                <viewController id="rcn-K2-qZU" sceneMemberID="viewController">
+                <viewController id="rcn-K2-qZU" customClass="EffectViewController" customModule="Camera2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAy-20-3iT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
