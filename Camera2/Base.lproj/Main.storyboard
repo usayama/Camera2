@@ -50,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="pictureImage" destination="jzT-wA-UDa" id="ojE-h3-zts"/>
+                        <segue destination="rcn-K2-qZU" kind="show" identifier="showEffectView" id="gNv-O9-nem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
