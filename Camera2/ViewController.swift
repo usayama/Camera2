@@ -39,5 +39,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func SNSButtonAction(_ sender: UIButton) {
     }
     
+    // (1) 撮影が終わったときに呼ばれるデリゲートメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // (2) 撮影した写真を、配置したpictureImageに渡す
+        pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        // (3) モーダルビューを閉じる
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
