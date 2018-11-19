@@ -24,6 +24,29 @@ class EffectViewController: UIViewController {
     var originalImage: UIImage?
     
     @IBAction func effectButtonAction(_ sender: UIButton) {
+        // エフェクト前画像をアンラップしてエフェクト用画像として取り出す
+        if let image = originalImage {
+            // フィルター名を指定
+            let filterName = "CIPhotoEffectMono"
+            // もともとの画像の回転角度を取得
+            let rotate = image.imageOrientation
+            // UIImage形式の画像をCIImage形式の画像に変換
+            let inputImage = CIImage(image: image)
+            // フィルターの種類を引数で指定された種類をしてCIFilterのインスタンスを取得
+            guard let effectFilter = CIFilter(name: filterName) else { return }
+            // エフェクトのパラメータを初期化
+            effectFilter.setDefaults()
+            // インスタンスにエフェクトする元画像を設定
+            effectFilter.setValue(inputImage, forKey: kCIInputImageKey)
+            // エフェクト後のCIImage形式の画像を取り出す
+            guard let outoutImage = effectFilter.outputImage else { return }
+            // CIContextのインスタンスを取得
+            let ciContext = CIContext(options: nil)
+            // エフェクト後の画像をCIContext上に描画し、結果をcgImageとしてCGImage形式の画像を取得
+            guard let cgImage = ciContext.createCGImage(outoutImage, from: outoutImage.extent) else { return }
+            // エフェクト後の画像をCGImage形式からUIImage形式に変更、その際に回転角度を指定、そしてImageViewに表示
+            effectImage.image = UIImage(cgImage: cgImage, scale: 1.0, orientation: rotate)
+        }
     }
     
     @IBAction func shareButtonAction(_ sender: UIButton) {
