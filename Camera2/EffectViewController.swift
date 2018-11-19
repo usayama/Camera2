@@ -18,6 +18,10 @@ class EffectViewController: UIViewController {
 
     @IBOutlet weak var effectImage: UIImageView!
     
+    // エフェクト前画像
+    // 前の画面より画像を設定
+    var originalImage: UIImage?
+    
     @IBAction func effectButtonAction(_ sender: UIButton) {
     }
     
