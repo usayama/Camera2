@@ -13,7 +13,8 @@ class EffectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 画面遷移時に元の画像を表示
+        effectImage.image = originalImage
     }
 
     @IBOutlet weak var effectImage: UIImageView!
@@ -29,5 +30,6 @@ class EffectViewController: UIViewController {
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
