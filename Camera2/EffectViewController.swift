@@ -50,6 +50,17 @@ class EffectViewController: UIViewController {
     }
     
     @IBAction func shareButtonAction(_ sender: UIButton) {
+        // 表示画像をアンラップしてシェア画像を取り出し
+        if let shareImage = effectImage.image {
+            // UIActivityViewControllerに渡す配列を作成
+            let shareItems = [shareImage]
+            // UIActivityViewControllerにシェア画像を渡す
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            // iPadで落ちてしまう対策
+            controller.popoverPresentationController?.sourceView = view
+            // UIActivityViewControllerを表示
+            present(controller, animated: true, completion: nil)
+        }
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
