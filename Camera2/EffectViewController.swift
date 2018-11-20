@@ -19,6 +19,20 @@ class EffectViewController: UIViewController {
 
     @IBOutlet weak var effectImage: UIImageView!
     
+    // フィルターを列挙した配列
+    let filterArray = ["CIPhotoEffectMono",
+                        "CIPhotoEffectChrome",
+                        "CIPhotoEffectFade",
+                        "CIPhotoEffectInstant",
+                        "CIPhotoEffectNoir",
+                        "CIPhotoEffectProcess",
+                        "CIPhotoEffectTonal",
+                        "CIPhotoEffectTransfer",
+                        "CISepiaTone"]
+    
+    // 選択中のエファクト添字
+    var filterSelectNumber = 0
+    
     // エフェクト前画像
     // 前の画面より画像を設定
     var originalImage: UIImage?
@@ -27,7 +41,14 @@ class EffectViewController: UIViewController {
         // エフェクト前画像をアンラップしてエフェクト用画像として取り出す
         if let image = originalImage {
             // フィルター名を指定
-            let filterName = "CIPhotoEffectMono"
+            let filterName = filterArray[filterSelectNumber]
+            // 次に選択するエフェクト添字に変更
+            filterSelectNumber += 1
+            // 添字が配列の数と同じかチェック
+            if filterSelectNumber == filterArray.count {
+                // 同じ場合は最後まで選択されたので先頭に戻す
+                filterSelectNumber = 0
+            }
             // もともとの画像の回転角度を取得
             let rotate = image.imageOrientation
             // UIImage形式の画像をCIImage形式の画像に変換
